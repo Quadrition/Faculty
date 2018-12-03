@@ -17,17 +17,23 @@ using std::cout;
 using std::endl;
 using std::ifstream;
 
+/*
+	Checks if student id is valid
+*/
 bool Menu::is_id_valid(string id) const
 {
 	return false;
 }
 
+/*
+	Displays menu items with choices
+*/
 void Menu::display_menu(bool new_line) const
 {
 	if (new_line)
 		cout << endl << endl;
 
-	cout << "=====Menu=====" << endl;
+	cout << "===== Menu =====" << endl;
 	cout << "1. Display info" << endl;
 	cout << "2. Read students" << endl;
 	cout << "3. Display students" << endl;
@@ -38,20 +44,29 @@ void Menu::display_menu(bool new_line) const
 	cout << "8. Exit" << endl;
 }
 
+/*
+	Displays information about project authors
+*/
 void Menu::display_info() const
 {
-	cout << "====Info====" << endl;
+	cout << "==== Info ====" << endl;
 	cout << "Authors:" << endl;
 	cout << "Petar Cerovic SW26-2017" << endl;
 	cout << "Milan Pavlov SW35-2017" << endl;
 	cout << "Sara Miketek SW62-2017" << endl;
 }
 
+/*
+	Read students from textual or binary file
+*/
 void Menu::read_students(string file_name)
 {
 	gs.read_from_file(file_name);
 }
 
+/*
+	Displays student with corresponding ID
+*/
 void Menu::display_students() const
 {
 	if (this->gs.is_empty())
@@ -66,6 +81,9 @@ void Menu::display_students() const
 	this->gs.display(id);
 }
 
+/*
+	Displays all students ordered by Last Name
+*/
 void Menu::display_students_sorted() const
 {
 	if (this->gs.is_empty())
@@ -77,6 +95,9 @@ void Menu::display_students_sorted() const
 	this->gs.display_sorted();
 }
 
+/*
+	Displays all students ordered by highest score
+*/
 void Menu::display_highest_score() const
 {
 	if (this->gs.is_empty())
@@ -88,6 +109,9 @@ void Menu::display_highest_score() const
 	this->gs.display_highest();
 }
 
+/*
+	Displays all students
+*/
 void Menu::display_all_students() const
 {
 	if (this->gs.is_empty())
@@ -99,6 +123,9 @@ void Menu::display_all_students() const
 	this->gs.display_all();
 }
 
+/*
+	Write students into textual or/and binary files
+*/
 void Menu::write_students(string file_name)
 {
 	if (this->gs.is_empty())

@@ -27,10 +27,10 @@ public:
 	// Initializes an empty Student
 	Student();
 
-	// Destructs the student
+	// Destructs student object
 	~Student();
 
-	// Student constructor with parameters
+	// Initializes Student with parameters
 	Student(const string &first_name, const string &last_name, const string &id);
 
 	// Returns the first name of student

@@ -36,13 +36,13 @@ private:
 	};
 
 public:
-	// Courses empty constructor
+	// Initializes empty Courses
 	Courses();
 
-	// Courses destructor
+	// Destructs Courses object
 	~Courses();
 
-	// Courses constructor with parameters
+	// Initializes Courses with parameters
 	Courses(const vector<int> &quiz, const vector<int> &homework, const vector<int> &test);
 
 	// Returns a final score of course

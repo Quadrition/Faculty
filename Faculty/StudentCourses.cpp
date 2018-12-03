@@ -14,21 +14,21 @@ using std::cout;
 using std::endl;
 
 /*
-	StudentCourses empty constructor
+	Initializes empty Student object with its empty courses
 */
 StudentCourses::StudentCourses()
 {
 }
 
 /*
-	StudentCourses destructor
+	Destructs Student object
 */
 StudentCourses::~StudentCourses()
 {
 }
 
 /*
-	StudentCourses constructor with parameters
+	Initializes Student object with its courses
 */
 StudentCourses::StudentCourses(const Student &student, const Courses &courses) : student(student), courses(courses)
 {

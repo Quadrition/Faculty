@@ -20,21 +20,21 @@ using std::string;
 using std::istream;
 
 /*
-	Student empty constructor
+	Initializes an empty Student
 */
 Student::Student()
 {
 }
 
 /*
-	Student destructor
+	Destructs student object
 */
 Student::~Student()
 {
 }
 
 /*
-	Student constructor with parameters
+	Initializes Student with parameters
 */
 Student::Student(const string &first_name, const string &last_name, const string &id) : first_name(first_name), last_name(last_name), id(id)
 {

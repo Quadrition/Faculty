@@ -24,16 +24,16 @@ private:
 	Courses courses;
 
 public:
-	// StudentCourses empty constructor
+	// Initializes empty Student object with its empty courses
 	StudentCourses();
 
-	// StudentCourses destructor
+	// Destructs Student object
 	~StudentCourses();
 
-	// StudentCourses constructor with parameters
+	// Initializes Student object with its courses
 	StudentCourses(const Student &student, const Courses &courses);
 
-	// Returns a stdeunt
+	// Returns a student
 	Student get_student() const;
 
 	// Returns a course that student have

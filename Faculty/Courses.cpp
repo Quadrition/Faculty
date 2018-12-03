@@ -22,21 +22,21 @@ static const double HOMEWORK_WEIGHT = 0.5;
 static const double TEST_WEIGHT = 0.45;
 
 /*
-	Courses empty constructor
+	Initializes empty Courses
 */
 Courses::Courses() : quiz(NUM_QUIZZES), homework(NUM_HW), test(NUM_TESTS)
 {
 }
 
 /*
-	Courses destructor
+	Destructs Courses object
 */
 Courses::~Courses()
 {
 }
 
 /*
-	Courses constructor with parameters
+	Initializes Courses with parameters
 */
 Courses::Courses(const vector<int> &quiz, const vector<int> &homework, const vector<int> &test) : quiz(quiz), homework(homework), test(test), final_score(0), letter_grade('F')
 {

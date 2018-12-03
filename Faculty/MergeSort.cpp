@@ -9,6 +9,9 @@
 
 #include "MergeSort.h"
 
+/*
+	Sorts students by Last Name
+*/
 void MergeSort::mergeSortGroupOfStudentsByLastName(vector<StudentCourses>& left, vector<StudentCourses>& right, vector<StudentCourses>& sc)
 {
 	int nL = left.size();
@@ -37,6 +40,9 @@ void MergeSort::mergeSortGroupOfStudentsByLastName(vector<StudentCourses>& left,
 	}
 }
 
+/*
+	Sort students by highest score
+*/
 void MergeSort::mergeSortGroupOfStudentsByScore(vector<StudentCourses>& left, vector<StudentCourses>& right, vector<StudentCourses>& sc)
 {
 	int nL = left.size();
@@ -65,6 +71,9 @@ void MergeSort::mergeSortGroupOfStudentsByScore(vector<StudentCourses>& left, ve
 	}
 }
 
+/*
+	Checks and calls function for sorting Students by last name
+*/
 void MergeSort::sortGroupOfStudentsByLastName(vector<StudentCourses>& sc)
 {
 	if (sc.size() <= 1) return;
@@ -83,6 +92,9 @@ void MergeSort::sortGroupOfStudentsByLastName(vector<StudentCourses>& sc)
 	mergeSortGroupOfStudentsByLastName(left, right, sc);
 }
 
+/*
+	Checks and calls function for sorting Students by highest score
+*/
 void MergeSort::sortGroupOfStudentsByScore(vector<StudentCourses>& sc)
 {
 	if (sc.size() <= 1) return;

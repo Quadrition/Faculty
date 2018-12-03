@@ -23,21 +23,21 @@ void GroupOfStudents::search_for_highest(vector<int>& indices_max) const
 }
 
 /*
-	GroupOfStudents empty constructor
+	Initializes array of Students object
 */
 GroupOfStudents::GroupOfStudents()
 {
 }
 
 /*
-	GroupOfStudents destructor
+	Destructs array of Students
 */
 GroupOfStudents::~GroupOfStudents()
 {
 }
 
 /*
-	GroupOfStudents constructor with parameters
+	Initializes array of Students with courses
 */
 GroupOfStudents::GroupOfStudents(const vector<StudentCourses>& st_vec) : st_vec(st_vec)
 {

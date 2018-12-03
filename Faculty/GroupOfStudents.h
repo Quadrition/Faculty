@@ -26,13 +26,13 @@ private:
 	void search_for_highest(vector<int> &indices_max) const;
 
 public:
-	// GroupOfStudents empty constructor
+	// Initializes array of Students object
 	GroupOfStudents();
 
-	// GroupOfStudents destructor
+	// Destructs array of Students
 	~GroupOfStudents();
 
-	// GroupOfStudents constructor with parameters
+	// Initializes array of Students with courses
 	GroupOfStudents(const vector<StudentCourses> &st_vec);
 
 	// Returns a vector of StudentCourses
