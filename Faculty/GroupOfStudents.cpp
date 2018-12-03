@@ -56,7 +56,7 @@ const vector<StudentCourses> GroupOfStudents::get_student_courses() const
 */
 void GroupOfStudents::read_from_file(string file_name)
 {
-	string type = "bin";
+	//string type = "bin";
 
 	//if (type == "txt")
 	//{

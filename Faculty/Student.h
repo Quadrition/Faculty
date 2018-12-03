@@ -24,10 +24,10 @@ private:
 	string id;
 
 public:
-	// Student empty constructor
+	// Initializes an empty Student
 	Student();
 
-	// Student destructor
+	// Destructs the student
 	~Student();
 
 	// Student constructor with parameters
