@@ -43,7 +43,7 @@ void Menu::display_info() const
 	cout << "====Info====" << endl;
 	cout << "Authors:" << endl;
 	cout << "Petar Cerovic SW26-2017" << endl;
-	cout << "Milan Pavlov SW??-2017" << endl;
+	cout << "Milan Pavlov SW35-2017" << endl;
 	cout << "Sara Miketek SW62-2017" << endl;
 }
 

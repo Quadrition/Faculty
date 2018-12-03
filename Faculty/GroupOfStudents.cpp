@@ -58,20 +58,20 @@ void GroupOfStudents::read_from_file(string file_name)
 {
 	string type = "bin";
 
-	if (type == "txt")
-	{
+	//if (type == "txt")
+	//{
 		ifstream ifs;
 		ifs.open(file_name, ifstream::in);
 		ifs >> *this;
-	}
-	else if (type == "bin")
+	//}
+	/**else if (type == "bin")
 	{
 		ifstream ifs;
 		ifs.open(file_name, ios::binary);
 		int x = 10;
 		ifs.read(reinterpret_cast<char*> (&x), sizeof(int));
 		
-	}
+	}*/
 }
 
 /*
