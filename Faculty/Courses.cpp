@@ -1,7 +1,7 @@
 //============================================================================
 // File Name   : Courses.cpp
-// Authors     : You
-// Version     : 1.0
+// Authors     : Sara Miketek
+// Version     : 1.2
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================
@@ -75,7 +75,7 @@ void Courses::calc_final_score()
 	// Calculating quiz results
 	for (vector<int>::iterator it = this->quiz.begin(); it != this->quiz.end(); ++it) 
 	{
-		if (!(0 <= *it <= 100))
+		if (*it > 100 || *it < 0)
 			throw InvalidData();
 
 		quiz += *it;
@@ -85,7 +85,7 @@ void Courses::calc_final_score()
 	// Calculating homework results
 	for (vector<int>::iterator it = this->homework.begin(); it != this->homework.end(); ++it)
 	{
-		if (!(0 <= *it <= 100))
+		if (*it > 100 || *it < 0)
 			throw InvalidData();
 
 		homework += *it;
@@ -95,7 +95,7 @@ void Courses::calc_final_score()
 	// Calculating test results
 	for (vector<int>::iterator it = this->test.begin(); it != this->test.end(); ++it)
 	{
-		if (!(0 <= *it <= 100))
+		if (*it > 100 || *it < 0)
 			throw InvalidData();
 
 		test += *it;

@@ -1,19 +1,31 @@
 //============================================================================
 // File Name   : main.cpp 
 // Authors     : Various
-// Version     : 1.0
+// Version     : 1.1
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================
 
-#include "Menu.h"
 #include <iostream>
 #include <fstream>
+#include "Menu.h"
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
+	if (argc != 4)
+	{
+		cout << "Bad command arguments";
+		return 1;
+	}
+	string extension(argv[1]);
+	if (extension.compare("bin") != 0 && extension.compare("txt") != 0)
+	{
+		cout << "Invalid file extension!";
+		return 2;
+	}
+
 	Menu m;
 	int option;
 	m.display_menu(false);
@@ -49,7 +61,7 @@ int main(int argc, char **argv)
 		case Menu::READ_FILE:
 			try
 			{
-				m.read_students(argv[1]);
+				m.read_students(argv[2], extension);
 			}
 			catch (const Menu::InvalidFile& excp)
 			{
@@ -73,7 +85,7 @@ int main(int argc, char **argv)
 			m.display_all_students();
 			break;
 		case Menu::WRITE_FILE:
-			m.write_students("output.bin");
+			m.write_students(argv[3], extension);
 			break;
 		case Menu::EXIT:
 			option = Menu::EXIT;

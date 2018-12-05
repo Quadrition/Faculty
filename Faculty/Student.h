@@ -1,7 +1,7 @@
 //============================================================================
 // File Name   : Student.h
 // Authors     : Milan Pavlov
-// Version     : 1.0
+// Version     : 1.2
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================

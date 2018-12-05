@@ -35,9 +35,6 @@ private:
 public:
 	Menu() {}
 
-	// Checks if student id is valid
-	bool is_id_valid(string id) const;
-
 	// Displays menu items with choices
 	void display_menu(bool new_line) const;
 
@@ -45,7 +42,7 @@ public:
 	void display_info() const;
 
 	// Read students from textual or binary file
-	void read_students(string file_name);
+	void read_students(string file_name, string extension);
 
 	// Displays student with corresponding ID
 	void display_students() const;
@@ -60,7 +57,7 @@ public:
 	void display_all_students() const;
 
 	// Write students into textual or/and binary files
-	void write_students(string file_name);
+	void write_students(string file_name, string extension);
 };
 
 #endif /*MENU_H_*/

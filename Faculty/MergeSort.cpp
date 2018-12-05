@@ -1,7 +1,7 @@
 //============================================================================
 // File Name   : MergeSort.cpp
-// Authors     : You
-// Version     : 1.0
+// Authors     : Sara Miketek
+// Version     : 1.2
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================
@@ -108,7 +108,7 @@ void MergeSort::sortGroupOfStudentsByScore(vector<StudentCourses>& sc)
 	for (size_t j = 0; j < (sc.size()) - mid; j++)
 		right.push_back(sc[mid + j]);
 
-	sortGroupOfStudentsByLastName(left);
-	sortGroupOfStudentsByLastName(right);
-	mergeSortGroupOfStudentsByLastName(left, right, sc);
+	sortGroupOfStudentsByScore(left);
+	sortGroupOfStudentsByScore(right);
+	mergeSortGroupOfStudentsByScore(left, right, sc);
 }

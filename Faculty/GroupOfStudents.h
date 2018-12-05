@@ -1,7 +1,7 @@
 //============================================================================
 // File Name   : GroupOfStudents.h
 // Authors     : Petar Cerovic
-// Version     : 1.0
+// Version     : 1.2
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================
@@ -23,7 +23,17 @@ private:
 
 	static const int NUM_BEST = 5;
 
-	void search_for_highest(vector<int> &indices_max) const;
+	// Wirtes GroupOfStudents to binary file
+	void write_to_binary_file(string file_name);
+
+	// Wirtes GroupOfStudents to text file
+	void write_to_text_file(string file_name);
+
+	// Reads GroupOfStudents from binary file
+	void read_from_file_binary(string file_name);
+
+	// Reads GroupOfStudents from text file
+	void read_from_file_text(string file_name);
 
 public:
 	// Initializes array of Students object
@@ -39,7 +49,7 @@ public:
 	const vector<StudentCourses> get_student_courses() const;
 
 	// Reads a list of StudentCourses from file
-	void read_from_file(string file_name);
+	void read_from_file(string file_name, string extension);
 
 	// Displays a StudentCourses based on passed identification
 	void display(string id) const;
@@ -54,7 +64,7 @@ public:
 	void display_all() const;
 
 	// Wirtes GroupOfStudents to file
-	void write_to_file(string file_name);
+	void write_to_file(string file_name, string extension);
 
 	// Checks if GroupOfStudents is empty
 	bool is_empty() const;

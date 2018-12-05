@@ -1,7 +1,7 @@
 //============================================================================
 // File Name   : MergeSort.h
 // Authors     : Sara Miketek
-// Version     : 1.0
+// Version     : 1.1
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================

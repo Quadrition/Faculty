@@ -1,29 +1,20 @@
-#include "Menu.h"
 //============================================================================
 // File Name   : Menu.cpp
-// Authors     : You
+// Authors     : Petar Cerovic
 // Version     : 1.0
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================
 
-//  Your code starts here
 
 #include <fstream>
 #include <iostream>
+#include "Menu.h"
 
 using std::cin;
 using std::cout;
 using std::endl;
 using std::ifstream;
-
-/*
-	Checks if student id is valid
-*/
-bool Menu::is_id_valid(string id) const
-{
-	return false;
-}
 
 /*
 	Displays menu items with choices
@@ -59,9 +50,9 @@ void Menu::display_info() const
 /*
 	Read students from textual or binary file
 */
-void Menu::read_students(string file_name)
+void Menu::read_students(string file_name, string extension)
 {
-	gs.read_from_file(file_name);
+	gs.read_from_file(file_name, extension);
 }
 
 /*
@@ -126,7 +117,7 @@ void Menu::display_all_students() const
 /*
 	Write students into textual or/and binary files
 */
-void Menu::write_students(string file_name)
+void Menu::write_students(string file_name, string extension)
 {
 	if (this->gs.is_empty())
 	{
@@ -134,5 +125,5 @@ void Menu::write_students(string file_name)
 		return;
 	}
 
-	this->gs.write_to_file(file_name);
+	this->gs.write_to_file(file_name, extension);
 }

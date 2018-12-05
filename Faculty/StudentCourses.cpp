@@ -1,7 +1,7 @@
 //============================================================================
 // File Name   : StudentCourses.cpp
-// Authors     : You
-// Version     : 1.0
+// Authors     : Milan Pavlov
+// Version     : 1.1
 // Copyright   : Your copyright notice (if applicable)
 // Description : C++ group project
 //============================================================================

@@ -23,7 +23,7 @@ public:
 	static const int NUM_HW = 6;
 	static const int NUM_TESTS = 4;
 
-private:
+public:
 	vector<int> quiz;
 	vector<int> homework;
 	vector<int> test;
