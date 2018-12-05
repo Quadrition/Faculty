@@ -111,7 +111,7 @@ int main(int argc, char **argv)
 			m.display_all_students();
 			break;
 		case Menu::WRITE_FILE:
-			m.write_students(argv[3], extension);
+			m.write_students(outputPath, extension);
 			break;
 		case Menu::EXIT:
 			option = Menu::EXIT;
