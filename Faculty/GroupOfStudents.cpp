@@ -55,11 +55,11 @@ void GroupOfStudents::read_from_file(string file_name, string extension)
 {
 	if (extension.compare("bin") == 0)
 	{
-		this->read_from_file_binary(file_name + "." + extension);
+		this->read_from_file_binary(file_name);
 	}
 	else
 	{
-		this->read_from_file_text(file_name + "." + extension);
+		this->read_from_file_text(file_name);
 	}
 }
 
@@ -73,6 +73,10 @@ void GroupOfStudents::read_from_file_binary(string file_name)
 	vector<StudentCourses> scs;
 
 	ifs.open(file_name, ios::binary);
+
+	if (ifs.fail())
+		throw Menu::InvalidFile();
+
 	int size_first_name, size_last_name, size_id;
 
 	ifs.seekg(0, ios::end);
@@ -138,6 +142,10 @@ void GroupOfStudents::read_from_file_text(string file_name)
 	ifstream ifs;
 
 	ifs.open(file_name);
+
+	if (ifs.fail())
+		throw Menu::InvalidFile();
+
 	ifs >> *this;
 	ifs.close();
 }
@@ -211,11 +219,11 @@ void GroupOfStudents::write_to_file(string file_name, string extension)
 {
 	if (extension.compare("bin") == 0)
 	{
-		this->write_to_text_file(file_name + "." + extension);
-		this->write_to_binary_file(file_name + "." + extension);
+		this->write_to_text_file(file_name + "." + "txt");
+		this->write_to_binary_file(file_name);
 	}
 	else
-		this->write_to_text_file(file_name + "." + extension);
+		this->write_to_text_file(file_name);
 }
 
 /*
@@ -223,12 +231,15 @@ void GroupOfStudents::write_to_file(string file_name, string extension)
 */
 void GroupOfStudents::write_to_binary_file(string file_name)
 {
+	vector<StudentCourses> sorted = this->st_vec;
+	MergeSort::sortGroupOfStudentsByIndex(sorted);
+
 	ofstream ofs;
 
 	ofs.open(file_name, ios::binary);
 	int size;
 
-	for (vector<StudentCourses>::const_iterator it = this->st_vec.begin(); it != this->st_vec.end(); ++it) {
+	for (vector<StudentCourses>::const_iterator it = sorted.begin(); it != sorted.end(); ++it) {
 		size = it->get_student().get_first_name().length() + 1;
 		ofs.write(reinterpret_cast<char*> (&size), sizeof(int));
 		ofs.write(it->get_student().get_first_name().c_str(), size * sizeof(char));
@@ -262,10 +273,14 @@ void GroupOfStudents::write_to_binary_file(string file_name)
 */
 void GroupOfStudents::write_to_text_file(string file_name)
 {
+	vector<StudentCourses> sorted = this->st_vec;
+	MergeSort::sortGroupOfStudentsByIndex(sorted);
+	GroupOfStudents group(sorted);
+
 	ofstream ofs;
 
 	ofs.open(file_name);
-	ofs << *this;
+	ofs << group;
 	ofs.close();
 }
 

@@ -9,21 +9,47 @@
 #include <iostream>
 #include <fstream>
 #include "Menu.h"
+#include <filesystem>
 
 using namespace std;
+namespace fs = std::experimental::filesystem;
+
+static const string OUTPUT_DEFALUT = "output";
 
 int main(int argc, char **argv)
 {
-	if (argc != 4)
+	if (argc != 3 && argc != 4)
 	{
-		cout << "Bad command arguments";
+		cout << "Bad command arguments!";
 		return 1;
 	}
 	string extension(argv[1]);
 	if (extension.compare("bin") != 0 && extension.compare("txt") != 0)
 	{
 		cout << "Invalid file extension!";
-		return 2;
+		return 1;
+	}
+	string inputPath = argv[2];
+	string outputPath;
+	if (inputPath.substr(inputPath.length() - 3) == "bin" && inputPath.substr(inputPath.length() - 3) == "txt")
+	{
+		cout << "File extension of full output path is different from extension passed as first argument!";
+		return 1;
+	}
+	if (argc == 4)
+	{
+		outputPath = argv[3];
+
+		if (outputPath.substr(outputPath.length() - 3) == "bin" && outputPath.substr(outputPath.length() - 3) == "txt")
+		{
+			cout << "File extension of full input path is different from extension passed as first argument!";
+			return 1;
+		}
+	}
+	else
+	{
+		int last = inputPath.find_last_of("/\\");
+		outputPath = inputPath.substr(0, last + 1) + OUTPUT_DEFALUT + "." + extension;
 	}
 
 	Menu m;
@@ -61,7 +87,7 @@ int main(int argc, char **argv)
 		case Menu::READ_FILE:
 			try
 			{
-				m.read_students(argv[2], extension);
+				m.read_students(inputPath, extension);
 			}
 			catch (const Menu::InvalidFile& excp)
 			{

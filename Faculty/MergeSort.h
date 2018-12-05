@@ -24,6 +24,9 @@ private:
 	// Sorts students by highest score
 	static void mergeSortGroupOfStudentsByScore(vector<StudentCourses>& left, vector<StudentCourses>& right, vector<StudentCourses>& bars);
 
+	// Sorts students by index
+	static void mergeSortGroupOfStudentsByIndex(vector<StudentCourses>& left, vector<StudentCourses>& right, vector<StudentCourses>& bars);
+
 public:
 
 	// Checks and calls function for sorting Students by last name
@@ -31,6 +34,9 @@ public:
 
 	// Checks and calls function for sorting Students by highest score
 	static void sortGroupOfStudentsByScore(vector<StudentCourses> &sc);
+
+	// Checks and calls function for sorting Students by index
+	static void sortGroupOfStudentsByIndex(vector<StudentCourses> &sc);
 };
 
 #endif /*MERGESORT_H_*/
